@@ -15,7 +15,7 @@ This project implements a full-stack Role-Based Access Control (RBAC) system to 
 
 ## 🏗️ System Architecture
 
-
+```
 ┌─────────────────────────────────────────────────────────────┐
 │                       Client Layer                          │
 │             (React + Vite + Tailwind CSS)                   │
@@ -52,7 +52,7 @@ This project implements a full-stack Role-Based Access Control (RBAC) system to 
 │  • User-Role Mapping    • Role-Permission Mapping           │
 │  • Audit Logs                                               │
 └─────────────────────────────────────────────────────────────┘
-
+```
 
 ### 🔄 Request Flow
 
@@ -68,37 +68,37 @@ This project implements a full-stack Role-Based Access Control (RBAC) system to 
 ### Backend
 
 ```
-| **Technology** | **Version** | **Purpose** |
-|----------------|-------------|-------------|
-| Java | Verify installed version | Programming language |
-| Spring Boot | Verify `pom.xml` | Backend framework |
-| Spring Security | Verify `pom.xml` | Authentication and authorization |
-| Spring Data JPA | Verify `pom.xml` | Database operations |
-| Hibernate | Managed by Spring Boot | ORM |
-| MySQL | Verify installed version | Relational database |
-| JWT | Verify `pom.xml` dependency | Token-based authentication |
-| Maven | Verify `pom.xml` | Dependency management and build tool |
+| **Technology**  | **Version**                 | **Purpose**                          |
+|-----------------|-----------------------------|--------------------------------------|
+| Java            | Verify installed version    | Programming language                 |
+| Spring Boot     | Verify `pom.xml`            | Backend framework                    |
+| Spring Security | Verify `pom.xml`            | Authentication and authorization     |
+| Spring Data JPA | Verify `pom.xml`            | Database operations                  |
+| Hibernate       | Managed by Spring Boot      | ORM                                  |
+| MySQL           | Verify installed version    | Relational database                  |
+| JWT             | Verify `pom.xml` dependency | Token-based authentication           |
+| Maven           | Verify `pom.xml`            | Dependency management and build tool |
 
 ### Frontend
 
-| **Technology** | **Version** | **Purpose** |
-|----------------|-------------|-------------|
-| React | 18.2.0 | UI framework |
-| React Router DOM | 6.30.6 | Client-side routing |
-| Axios | 1.6.2 | HTTP client for API requests |
-| Tailwind CSS | 3.4.19 | Styling |
-| Lucide React | 0.263.1 | Icons |
-| Vite | 5.4.21 | Development server and build tool |
+| **Technology**   | **Version** | **Purpose**                       |
+|------------------|-------------|-----------------------------------|
+| React            | 18.2.0      | UI framework                      |
+| React Router DOM | 6.30.6      | Client-side routing               |
+| Axios            | 1.6.2       | HTTP client for API requests      |
+| Tailwind CSS     | 3.4.19      | Styling                           |
+| Lucide React     | 0.263.1     | Icons                             |
+| Vite             | 5.4.21      | Development server and build tool |
 
 ### Development Tools
 
-| **Technology** | **Purpose** |
-|----------------|-------------|
-| IntelliJ IDEA | Java development and project management |
-| Visual Studio Code | Frontend development |
-| Git | Version control |
-| GitHub | Source code hosting |
-| Postman | API testing, if used |
+| **Technology**     | **Purpose**                             |
+|--------------------|-----------------------------------------|
+| IntelliJ IDEA      | Java development and project management |
+| Visual Studio Code | Frontend development                    |
+| Git                | Version control                         |
+| GitHub             | Source code hosting                     |
+| Postman            | API testing, if used                    |
 ```
 
 ## 📁 Project Structure
@@ -171,56 +171,54 @@ Install or configure:
 - Git (optional, for cloning the repository)
   
 1. Get the project
-Clone your GitHub repository after replacing the URL with your
-repository URL:
-git clone https://github.com/YOUR_USERNAME/fullstack-rbac-system.git
-cd RABC-Practice
-If you downloaded the ZIP, extract it and open the project folder in
-IntelliJ IDEA.
+Clone your GitHub repository after replacing the URL with your repository URL:
 
-3. Configure MySQL
+git clone https://github.com/YOUR_USERNAME/fullstack-rbac-system.git
+
+cd RABC-Practice
+
+If you downloaded the ZIP, extract it and open the project folder in IntelliJ IDEA.
+
+2. Configure MySQL
 Start MySQL and create the database if it does not already exist:
+
 CREATE DATABASE rbac_db;
-Configure the backend datasource using your local database details. Do
-not commit real passwords.
+
+Configure the backend datasource using your local database details. Do not commit real passwords.
 
 Example application.properties configuration:
+
 spring.datasource.url=jdbc:mysql://localhost:3306/rbac_db
+
 spring.datasource.username=${DB_USERNAME}
+
 spring.datasource.password=${DB_PASSWORD}
+
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 spring.jpa.hibernate.ddl-auto=update
+
 spring.jpa.show-sql=true
 
 jwt.secret=${JWT_SECRET}
-These property names must match the properties expected by your backend
-code. If your project uses a different JWT property name, keep that name
-instead. Use a strong random JWT secret that meets your JWT library's
-requirements.
 
-Set DB_USERNAME, DB_PASSWORD, and JWT_SECRET in IntelliJ's Run →
-Edit Configurations → Environment variables for the Spring Boot run
-configuration. Do not paste actual secrets into this README or commit
-them to GitHub.
-spring.jpa.hibernate.ddl-auto=update is convenient for local
-development. Review database migration and schema-management practices
-before production use.
+These property names must match the properties expected by your backend code. If your project uses a different JWT property name, keep that name instead. Use a strong random JWT secret that meets your JWT library's requirements.
+
+Set DB_USERNAME, DB_PASSWORD, and JWT_SECRET in IntelliJ's Run → Edit Configurations → Environment variables for the Spring Boot run configuration. Do not paste actual secrets into this README or commit them to GitHub. spring.jpa.hibernate.ddl-auto=update is convenient for local development. Review database migration and schema-management practices before production use.
 
 3. Start the backend
-Open the backend folder in IntelliJ IDEA and wait for Maven
-dependencies to load. Run BackendApplication.java.
+Open the backend folder in IntelliJ IDEA and wait for Maven dependencies to load. Run BackendApplication.java.
 
-Alternatively, from the backend directory, if the Maven wrapper is
-present:
+Alternatively, from the backend directory, if the Maven wrapper is present:
 ./mvnw spring-boot:run
+
 On Windows PowerShell:
 .\mvnw.cmd spring-boot:run
-If the Maven wrapper is not present, use IntelliJ's Maven tools or an
-installed Maven command:
+
+If the Maven wrapper is not present, use IntelliJ's Maven tools or an installed Maven command:
 mvn spring-boot:run
-The backend is expected to start at http://localhost:8080 unless
-configured otherwise.
+
+The backend is expected to start at http://localhost:8080 unless configured otherwise.
 
 4. Start the frontend
 Open a second terminal:
