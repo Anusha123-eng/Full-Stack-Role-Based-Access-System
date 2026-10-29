@@ -67,6 +67,7 @@ This project implements a full-stack Role-Based Access Control (RBAC) system to 
 
 ### Backend
 
+```
 | **Technology** | **Version** | **Purpose** |
 |---|---|---|
 | Java | Verify installed version | Programming language |
@@ -98,10 +99,11 @@ This project implements a full-stack Role-Based Access Control (RBAC) system to 
 | Git | Version control |
 | GitHub | Source code hosting |
 | Postman | API testing, if used |
+```
 
 ## 📁 Project Structure
 
-
+```
 RABC-Practice/
 ├── backend/                              # Spring Boot + Java backend
 │   ├── src/
@@ -151,6 +153,7 @@ RABC-Practice/
 │
 ├── .gitignore                              # Files excluded from Git
 └── README.md                               # Project documentation
+```
 
 
 **Note:** This is a representative structure based on your project details, not a verified listing of every file. Keep only the folders and filenames that actually exist in your project, and adjust the Java package structure to match your code.
