@@ -69,7 +69,7 @@ This project implements a full-stack Role-Based Access Control (RBAC) system to 
 
 ```
 | **Technology** | **Version** | **Purpose** |
-|---|---|---|
+|----------------|-------------|-------------|
 | Java | Verify installed version | Programming language |
 | Spring Boot | Verify `pom.xml` | Backend framework |
 | Spring Security | Verify `pom.xml` | Authentication and authorization |
@@ -82,7 +82,7 @@ This project implements a full-stack Role-Based Access Control (RBAC) system to 
 ### Frontend
 
 | **Technology** | **Version** | **Purpose** |
-|---|---|---|
+|----------------|-------------|-------------|
 | React | 18.2.0 | UI framework |
 | React Router DOM | 6.30.6 | Client-side routing |
 | Axios | 1.6.2 | HTTP client for API requests |
@@ -93,7 +93,7 @@ This project implements a full-stack Role-Based Access Control (RBAC) system to 
 ### Development Tools
 
 | **Technology** | **Purpose** |
-|---|---|
+|----------------|-------------|
 | IntelliJ IDEA | Java development and project management |
 | Visual Studio Code | Frontend development |
 | Git | Version control |
@@ -224,16 +224,14 @@ configured otherwise.
 
 4. Start the frontend
 Open a second terminal:
-cd frontend
-npm install
-npm run dev
+  cd frontend
+  npm install
+  npm run dev
 Vite is expected to show a local URL such as http://localhost:5173.
 Open that URL in your browser.
 
-Ensure the API base URL in frontend/src/utils/api.js points to your
-running backend (for example, http://localhost:8080/api if that
-matches your controller routes). If your project uses a Vite proxy,
-ensure its target also points to the Spring Boot port.
+Ensure the API base URL in frontend/src/utils/api.js points to your running backend (for example, http://localhost:8080/api if that matches your controller routes). 
+If your project uses a Vite proxy, ensure its target also points to the Spring Boot port.
 
 ✨ Main Features
 The project pages and backend should be checked to confirm the exact
