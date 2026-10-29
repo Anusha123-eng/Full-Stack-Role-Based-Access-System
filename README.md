@@ -171,65 +171,59 @@ Install or configure:
 - Git (optional, for cloning the repository)
   
 1. Get the project
-Clone your GitHub repository after replacing the URL with your repository URL:
+   Clone your GitHub repository after replacing the URL with your repository URL:
 
-git clone https://github.com/YOUR_USERNAME/fullstack-rbac-system.git
+   git clone https://github.com/YOUR_USERNAME/fullstack-rbac-system.git
 
-cd RABC-Practice
+   cd RABC-Practice
 
-If you downloaded the ZIP, extract it and open the project folder in IntelliJ IDEA.
+   If you downloaded the ZIP, extract it and open the project folder in IntelliJ IDEA.
 
 2. Configure MySQL
-Start MySQL and create the database if it does not already exist:
+   Start MySQL and create the database if it does not already exist:
 
-CREATE DATABASE rbac_db;
+   CREATE DATABASE rbac_db;
 
-Configure the backend datasource using your local database details. Do not commit real passwords.
+   Configure the backend datasource using your local database details. Do not commit real passwords.
 
-Example application.properties configuration:
+   Example application.properties configuration:
 
-spring.datasource.url=jdbc:mysql://localhost:3306/rbac_db
+   spring.datasource.url=jdbc:mysql://localhost:3306/rbac_db
+   spring.datasource.username=${DB_USERNAME}
+   spring.datasource.password=${DB_PASSWORD}
+   spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+   spring.jpa.hibernate.ddl-auto=update
+   spring.jpa.show-sql=true
+   jwt.secret=${JWT_SECRET}
 
-spring.datasource.username=${DB_USERNAME}
+   These property names must match the properties expected by your backend code. If your project uses a different JWT property name,    keep that name instead. Use a strong random JWT secret that meets your JWT library's requirements.
 
-spring.datasource.password=${DB_PASSWORD}
-
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-
-spring.jpa.hibernate.ddl-auto=update
-
-spring.jpa.show-sql=true
-
-jwt.secret=${JWT_SECRET}
-
-These property names must match the properties expected by your backend code. If your project uses a different JWT property name, keep that name instead. Use a strong random JWT secret that meets your JWT library's requirements.
-
-Set DB_USERNAME, DB_PASSWORD, and JWT_SECRET in IntelliJ's Run → Edit Configurations → Environment variables for the Spring Boot run configuration. Do not paste actual secrets into this README or commit them to GitHub. spring.jpa.hibernate.ddl-auto=update is convenient for local development. Review database migration and schema-management practices before production use.
+   Set DB_USERNAME, DB_PASSWORD, and JWT_SECRET in IntelliJ's Run → Edit Configurations → Environment variables for the Spring Boot     run configuration. Do not paste actual secrets into this README or commit them to GitHub. spring.jpa.hibernate.ddl-auto=update is    convenient for local development. Review database migration and schema-management practices before production use.
 
 3. Start the backend
-Open the backend folder in IntelliJ IDEA and wait for Maven dependencies to load. Run BackendApplication.java.
+   Open the backend folder in IntelliJ IDEA and wait for Maven dependencies to load. Run BackendApplication.java.
 
-Alternatively, from the backend directory, if the Maven wrapper is present:
-./mvnw spring-boot:run
+   Alternatively, from the backend directory, if the Maven wrapper is present:
+   ./mvnw spring-boot:run
 
-On Windows PowerShell:
-.\mvnw.cmd spring-boot:run
+   On Windows PowerShell:
+   .\mvnw.cmd spring-boot:run
 
-If the Maven wrapper is not present, use IntelliJ's Maven tools or an installed Maven command:
-mvn spring-boot:run
+   If the Maven wrapper is not present, use IntelliJ's Maven tools or an installed Maven command:
+   mvn spring-boot:run
 
-The backend is expected to start at http://localhost:8080 unless configured otherwise.
+   The backend is expected to start at http://localhost:8080 unless configured otherwise.
 
 4. Start the frontend
-Open a second terminal:
-  cd frontend
-  npm install
-  npm run dev
-Vite is expected to show a local URL such as http://localhost:5173.
-Open that URL in your browser.
+   Open a second terminal:
+   cd frontend
+   npm install
+   npm run dev
+   Vite is expected to show a local URL such as http://localhost:5173.
+   Open that URL in your browser.
 
-Ensure the API base URL in frontend/src/utils/api.js points to your running backend (for example, http://localhost:8080/api if that matches your controller routes). 
-If your project uses a Vite proxy, ensure its target also points to the Spring Boot port.
+   Ensure the API base URL in frontend/src/utils/api.js points to your running backend (for example, http://localhost:8080/api          if that matches your controller routes). 
+   If your project uses a Vite proxy, ensure its target also points to the Spring Boot port.
 
 ✨ Main Features
 The project pages and backend should be checked to confirm the exact
