@@ -189,18 +189,26 @@ Install or configure:
    Example application.properties configuration:
 
    spring.datasource.url=jdbc:mysql://localhost:3306/rbac_db
+
    spring.datasource.username=${DB_USERNAME}
+
    spring.datasource.password=${DB_PASSWORD}
+
    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
    spring.jpa.hibernate.ddl-auto=update
+
    spring.jpa.show-sql=true
+
    jwt.secret=${JWT_SECRET}
 
    These property names must match the properties expected by your backend code. If your project uses a different JWT property name,    keep that name instead. Use a strong random JWT secret that meets your JWT library's requirements.
 
-   Set DB_USERNAME, DB_PASSWORD, and JWT_SECRET in IntelliJ's Run → Edit Configurations → Environment variables for the Spring Boot     run configuration. Do not paste actual secrets into this README or commit them to GitHub. spring.jpa.hibernate.ddl-auto=update is    convenient for local development. Review database migration and schema-management practices before production use.
+   Set DB_USERNAME, DB_PASSWORD, and JWT_SECRET in IntelliJ's Run → Edit Configurations → Environment variables for the Spring Boot     run configuration. Do not paste actual secrets into this README or commit them to GitHub.
+   spring.jpa.hibernate.ddl-auto=update is convenient for local development. Review database migration and schema-management
+   practices before production use.
 
-3. Start the backend
+4. Start the backend
    Open the backend folder in IntelliJ IDEA and wait for Maven dependencies to load. Run BackendApplication.java.
 
    Alternatively, from the backend directory, if the Maven wrapper is present:
@@ -214,7 +222,7 @@ Install or configure:
 
    The backend is expected to start at http://localhost:8080 unless configured otherwise.
 
-4. Start the frontend
+5. Start the frontend
    Open a second terminal:
    cd frontend
    npm install
